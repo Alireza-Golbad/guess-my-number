@@ -7,9 +7,13 @@ document.querySelector(".check").addEventListener("click", function () {
     console.log(guess, typeof guess);
     if (!guess) {
         document.querySelector(".message").textContent = "🚫 No number!!";
+        // When player wins--------------------------
     } else if (guess === secretNumber) {
         document.querySelector(".message").textContent =
             "🐱‍🐉 Correct number! 🎉";
+        document.querySelector("body").style.backgroundColor = "#009933";
+        document.querySelector(".number").style.width = "30rem";
+        // When number is too high or too low---------------------
     } else if (guess > secretNumber) {
         if (score > 1) {
             document.querySelector(".message").textContent = "📈 Too high!";
